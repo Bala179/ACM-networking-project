@@ -47,6 +47,7 @@ The **original** project had the following sequence of (important) steps:
 8. Close the client socket
 
 ## Results Obtained
+The client-server communication was implemented successfully - messages sent from the client side successfully reached the server side (and vice versa), and a simple chatting interface was established. Entering 'exit' at either end terminated both the programs together.
 
 ## Additions to the Project
 
