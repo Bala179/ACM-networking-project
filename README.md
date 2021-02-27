@@ -61,7 +61,7 @@ After completing the project, I made the following additions to the project to f
 After making modifications to the project as I mentioned above, I realized that client-server communication is a useful tool. While the basic arithmetic operations I implemented in this project can be implemented without using socket programming as well (that is, without the need of a server), I realized that if the program was more complex and had a number of files occupying a lot of space, it would be inconvenient to store all the files on the client computer, and instead store them on a larger computer (i.e., the server). With networking it becomes possible to run a program/piece of code that is not stored locally on your system, making it useful for larger applications. With the above points in mind, one of the future goals of this project is to develop it into a larger application of some kind which harnesses the power of networking (for example, using it to send files from the server to the client, along with some other functions). Another goal might be to develop a suitable front-end for the application to improve the user experience.
 
 ## Working of the Project
-1. Working of the 'chat' function
+1. Working of the client-server chat:
 ![client-server-chat](https://user-images.githubusercontent.com/69714469/109390380-4a33c100-7937-11eb-983a-27526da5f4ad.png)
-2. Working of the 'arithmetic operations' function
+2. Server performing basic arithmetic operations:
 ![client-server-arithmetic](https://user-images.githubusercontent.com/69714469/109390480-e65dc800-7937-11eb-8d6d-4b003c78ba6f.png)
