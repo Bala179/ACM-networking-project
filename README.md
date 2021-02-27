@@ -27,6 +27,7 @@ The **original** project (before modification) had the following sequence of (im
 6. When a connection request is encountered, *accept* the connection, and retrieve the ID of the client socket
 7. Repeat the following steps:
  * Receive a message from the client; if it is 'exit' (without quotes), go to step 8
+ * Display the message
  * Using `cin`, get a message from the server-side user
  * Send the message to the client
  * If the message was 'exit' (without quotes), go to step 8
@@ -44,6 +45,7 @@ The **original** project (before modification) had the following sequence of (im
  * Send the message to the server
  * If the message was 'exit' (without quotes), go to step 8
  * Receive a message from the server; if it is 'exit' (without quotes), go to step 8
+ * Display the message
 8. Close the client socket
 
 ## Results Obtained
@@ -52,9 +54,14 @@ The client-server communication was implemented successfully - messages sent fro
 ## Additions to the Project
 After completing the project, I made the following additions to the project to further build my skills:
 1. I provided a default port number (2000) and a default host name (localhost) in case the user does not enter either of these as command-line arguments.
-2. The original project, as I discovered, could not send more than one word at a time (words here are sequences of characters demarcated by spaces). To fix this, instead of using `cin>>...` for input, I used `cin.getline(...)`.
+2. The original project, as I discovered, could not send more than one word at a time (words here are sequences of characters demarcated by spaces). To fix this, instead of using `cin>>...` for input, I used `cin.getline(...)`. Then it became possible to send multiple words.
 3. In addition, I added an extra feature to the project - to make the server do **simple arithmetic calculations** instead of starting a chat. In the modified project, after a successful connection is made, the user (at the client side) is asked whether he/she wants to start a chat or ask the server to do arithmetic calculations. If the first option is chosen, the project works as described above. If the second option is chosen, the client-side user can enter an expression of the form 'num1 \<space\> operator \<space\> num2' and the message is sent to the server. The server extracts the operands and the operator, and the result is returned back to the client (note here that there is *no* user at the server side in this case). This process continues until the user types 'exit' (as before).
 
 ## Future Goals of the Project
+After making modifications to the project as I mentioned above, I realized that client-server communication is a useful tool. One advantage I noticed is that 
 
 ## Working of the Project
+1. Working of the 'chat' function
+![client-server-chat](https://user-images.githubusercontent.com/69714469/109390380-4a33c100-7937-11eb-983a-27526da5f4ad.png)
+2. Working of the 'arithmetic operations' function
+![client-server-arithmetic](https://user-images.githubusercontent.com/69714469/109390480-e65dc800-7937-11eb-8d6d-4b003c78ba6f.png)
