@@ -17,9 +17,9 @@ This project implements a basic Client-Server communication model using C++. Cli
 This project is completely written in C++ and runs on Linux operating system.
 
 ## Important Logic Used
-The **original** project had the following sequence of (important) steps:
+The **original** project (before modification) had the following sequence of (important) steps:
 ### Server side
-1. Get the port number from the user (or use the default)
+1. Get the port number from the user
 2. Create and initialize a `sockaddr_in` struct for the server *socket* (a means to use the endpoint for the communication), using the port number and other details
 3. Create a communication endpoint and return a file descriptor for that endpoint, using `socket()`
 4. *Bind* the socket to a port, using `bind()`
@@ -33,7 +33,7 @@ The **original** project had the following sequence of (important) steps:
 8. Close both the sockets
 
 ### Client side
-1. Get the port number and server IP address from the user (or use the defaults)
+1. Get the port number and server IP address from the user
 2. Get the `hostent*` struct for the server IP address
 3. Create and initialize a `sockaddr_in` struct for the client socket, using the port number, host details and other details
 4. Create a communication endpoint and return a file descriptor for that endpoint, using `socket()`
@@ -50,6 +50,10 @@ The **original** project had the following sequence of (important) steps:
 The client-server communication was implemented successfully - messages sent from the client side successfully reached the server side (and vice versa), and a simple chatting interface was established. Entering 'exit' at either end terminated both the programs together.
 
 ## Additions to the Project
+After completing the project, I made the following additions to the project to further build my skills:
+1. I provided a default port number (2000) and a default host name (localhost) in case the user does not enter either of these as command-line arguments.
+2. The original project, as I discovered, could not send more than one word at a time (words here are sequences of characters demarcated by spaces). To fix this, instead of using `cin>>...` for input, I used `cin.getline(...)`.
+3. In addition, I added an extra feature to the project - to make the server do **simple arithmetic calculations** instead of starting a chat. In the modified project, after a successful connection is made, the user (at the client side) is asked whether he/she wants to start a chat or ask the server to do arithmetic calculations. If the first option is chosen, the project works as described above. If the second option is chosen, the client-side user can enter an expression of the form 'num1 \<space\> operator \<space\> num2' and the message is sent to the server. The server extracts the operands and the operator, and the result is returned back to the client (note here that there is *no* user at the server side in this case). This process continues until the user types 'exit' (as before).
 
 ## Future Goals of the Project
 
