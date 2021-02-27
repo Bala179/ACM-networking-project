@@ -7,8 +7,8 @@ This project implements a basic Client-Server communication model using C++. Cli
 ## How to Run
 * The 'client.cpp' file should be downloaded to the client computer and the 'server.cpp' file, to the server computer.
 * Compile both files (on two separate Linux terminals), using `g++ -o client client.cpp` and `g++ -o server server.cpp`.
-* Run the **server** file **first** using either `./server` (for using default connection port of 2000) or `./server <port number>`.
-* Once the message 'Waiting for client to connect...' is displayed on the server terminal, run the client file using `./client <IP address of server> <port number>` (the port number should be the **same** as in the previous step). In case both the client and the server are the same computer, you could use either `./client localhost <port number>` (if the port number is not 2000) or just `./client` (here default server name is 'localhost' and default port number is 2000).
+* Run the **server** file **first** using either `./server` (for using the default connection port of 2000) or `./server <port number>`.
+* Once the message 'Waiting for client to connect...' is displayed on the server terminal, run the client file using `./client <IP address of server> <port number>` (the port number should be the **same** as in the previous step). In case both the client and the server are the same computer, you could use either `./client localhost <port number>` (if the port number is not 2000) or just `./client` (here the default server name is 'localhost' and the default port number is 2000).
 * You should see confirmation messages of the successful connection on both the terminals.
 
 *Note:* Here *port* refers to an endpoint of the communication.
@@ -49,16 +49,16 @@ The **original** project (before modification) had the following sequence of (im
 8. Close the client socket
 
 ## Results Obtained
-The client-server communication was implemented successfully - messages sent from the client side successfully reached the server side (and vice versa), and a simple chatting interface was established. Entering 'exit' at either end terminated both the programs together.
+The client-server communication model was implemented successfully - messages sent from the client side successfully reached the server side (and vice versa), and a simple chatting interface was established. Entering 'exit' at either end terminated both the programs together.
 
 ## Additions to the Project
 After completing the project, I made the following additions to the project to further build my skills:
 1. I provided a default port number (2000) and a default host name (localhost) in case the user does not enter either of these as command-line arguments.
 2. The original project, as I discovered, could not send more than one word at a time (words here are sequences of characters demarcated by spaces). To fix this, instead of using `cin>>...` for input, I used `cin.getline(...)`. Then it became possible to send multiple words.
-3. In addition, I added an extra feature to the project - to make the server do **simple arithmetic calculations** instead of starting a chat. In the modified project, after a successful connection is made, the user (at the client side) is asked whether he/she wants to start a chat or ask the server to do arithmetic calculations. If the first option is chosen, the project works as described above. If the second option is chosen, the client-side user can enter an expression of the form 'num1 \<space\> operator \<space\> num2' and the message is sent to the server. The server extracts the operands and the operator, and the result is returned back to the client (note here that there is *no* user at the server side in this case). This process continues until the user types 'exit' (as before).
+3. In addition, I added an extra feature to the project - to make the server do **simple arithmetic calculations** instead of starting a chat. In the modified project, after a successful connection is made, the user (at the client side) is asked whether he/she wants to start a chat or ask the server to do arithmetic calculations. This choice is sent to the server. If the first option is chosen, the project works as described above. If the second option is chosen, the client-side user can enter an expression of the form 'num1 \<space\> operator \<space\> num2' and the message is sent to the server. The server extracts the operands and the operator, and the result is returned back to the client (note here that there is *no* user at the server side in this case). This process continues until the user types 'exit' (as before).
 
 ## Future Goals of the Project
-After making modifications to the project as I mentioned above, I realized that client-server communication is a useful tool. One advantage I noticed is that 
+After making modifications to the project as I mentioned above, I realized that client-server communication is a useful tool. While the basic arithmetic operations I implemented in this project can be implemented without using socket programming as well (that is, without the need of a server), I realized that if the program was more complex and had a number of files occupying a lot of space, it would be inconvenient to store all the files on the client computer, and instead store them on a larger computer (i.e., the server). With networking it becomes possible to run a program/piece of code that is not stored locally on your system, making it useful for larger applications. With the above points in mind, one of the future goals of this project is to develop it into a larger application of some kind which harnesses the power of networking (for example, using it to send files from the server to the client, along with some other functions). Another goal might be to develop a suitable front-end for the application to improve the user experience.
 
 ## Working of the Project
 1. Working of the 'chat' function
