@@ -1,4 +1,4 @@
-# ACM-networking-project
+# Client Server Communication Using TCP/IP Protocol
 This is an open project on Computer Networking that I completed with IIT Roorkee ACM Student Chapter, in December 2020.
 
 ## Introduction
