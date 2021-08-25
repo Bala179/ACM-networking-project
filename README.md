@@ -38,15 +38,14 @@ The **original** project (before modification) had the following sequence of (im
 2. Get the `hostent*` struct for the server IP address
 3. Create and initialize a `sockaddr_in` struct for the client socket, using the port number, host details and other details
 4. Create a communication endpoint and return a file descriptor for that endpoint, using `socket()`
-5. Bind the socket to a port, using `bind()`
-6. Connect to the client socket
-7. Repeat the following steps:
+5. Connect to the client socket
+6. Repeat the following steps:
  * Using `cin`, get a message from the client-side user
  * Send the message to the server
  * If the message was 'exit' (without quotes), go to step 8
  * Receive a message from the server; if it is 'exit' (without quotes), go to step 8
  * Display the message
-8. Close the client socket
+7. Close the client socket
 
 ## Results Obtained
 The client-server communication model was implemented successfully - messages sent from the client side successfully reached the server side (and vice versa), and a simple chatting interface was established. Entering 'exit' at either end terminated both the programs together.
