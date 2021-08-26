@@ -42,8 +42,8 @@ The **original** project (before modification) had the following sequence of (im
 6. Repeat the following steps:
  * Using `cin`, get a message from the client-side user
  * Send the message to the server
- * If the message was 'exit' (without quotes), go to step 8
- * Receive a message from the server; if it is 'exit' (without quotes), go to step 8
+ * If the message was 'exit' (without quotes), go to step 7
+ * Receive a message from the server; if it is 'exit' (without quotes), go to step 7
  * Display the message
 7. Close the client socket
 
